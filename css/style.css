@@ -55,7 +55,7 @@ a:link {
     text-decoration: none;
 }
 
-.hide{
+.hide {
     visibility: hidden;
     display: none;
 }
@@ -64,7 +64,7 @@ a:link {
 /* GRID */
 
 .gallery-container {
-   
+
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(auto-fit, 1fr);
@@ -115,7 +115,6 @@ a:link {
     padding: 11px;
     height: 70px;
     border-left: 2px solid #8A8A8A;
-    /* padding: 12px 10px; */
 
 }
 
@@ -127,7 +126,7 @@ a:link {
     -moz-box-shadow: 0px -10px 0px -1px rgb(0, 0, 0) inset;
 }
 
-.search-container{
+.search-container {
     height: 80px;
 }
 
@@ -135,8 +134,9 @@ a:link {
     padding: 10px;
     font-size: 14px;
     width: 200px;
-  }
-  .search-container button{
+}
+
+.search-container button {
     float: left;
     padding: 10px;
     background: white;
@@ -144,34 +144,45 @@ a:link {
     font-size: 17px;
     border: none;
     cursor: pointer;
-  }
+}
 
-  .search-container input[type=text]::-webkit-input-placeholder {
+.search-container input[type=text]::-webkit-input-placeholder {
     font-size: 14px;
     line-height: 3;
 }
 
-  .search-container button:hover{
+.search-container button:hover {
 
-  background: #0b7dda;
-  }
+    background: #0b7dda;
+}
 
 .canvas-container {
-    display: grid;
-    grid-template-columns: repeat(12, 50px 1fr);
-    grid-template-columns: repeat(12 50px 1fr);
-    /* padding: 20px; */
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
     max-height: 600;
     width: 100%;
     background-color: #E3E3E3;
 
 }
+.displaybtn{
+   display: flex;
+   flex-direction: column;
+}
 
+.displaybtn input[type=text]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 24px;
+    box-sizing: border-box;
+  
+}
 
-canvas {
-    grid-column: 2/span 4;
-    display: block;
-    margin: 0 auto;
+.canvas {
+    margin: 20px;
     border: 4px solid black;
     cursor: crosshair;
 

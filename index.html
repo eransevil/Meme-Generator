@@ -33,22 +33,27 @@
     </section>
 
     <form class="editor-form hide">
-        <input name="text-input" id="text-input" type="text" placeholder="text" />
-        <button type="button" class="editor-btn" onclick="onChangeFont('+')">
-            <img src="img/icon/increase font - icon.png" />
-        </button>
-        <button type="button" class="editor-btn" onclick="onChangeFont('-')">
-            <img src="img/icon/decrease font - icon.png" />
-        </button>
-        <button type="button" class="editor-btn" onclick="onAddLine()">
-            <img src="img/icon/add.png" />
-        </button>
-        <button type="button" class="editor-btn" onclick="onChangeLine()">
-            <img src="img/icon/up-and-down-opposite-double-arrows-side-by-side.png" />
-        </button>
+       
 
     <div class="canvas-container ">
-        <canvas id="my-canvas" height="540" width="550"> </canvas>
+        <canvas class="canvas" id="my-canvas" height="540" width="550"> </canvas>
+
+        <div class="displaybtn ">
+        <input name="text-input" id="text-input" type="text" placeholder="text" />
+        <button type="button" class="editor-btn flex" onclick="onChangeFont('+')">
+            <img src="img/icon/increase font - icon.png" />
+        </button>
+        <button type="button" class="editor-btn flex" onclick="onChangeFont('-')">
+            <img src="img/icon/decrease font - icon.png" />
+        </button>
+        <button type="button" class="editor-btn flex" onclick="onAddLine()">
+            <img src="img/icon/add.png" />
+        </button>
+        <button type="button" class="editor-btn flex" onclick="onChangeLine()">
+            <img src="img/icon/up-and-down-opposite-double-arrows-side-by-side.png" />
+        </button>
+    </div>
+
     </div>
     <!-- onmousemove="draw(event)"
       onmousedown="onDown()"  -->
@@ -56,6 +61,7 @@
 
     <section class="gallery-container"></section>
 
+    <script type="text/javascript" src="js/utils.js"></script>
     <script type="text/javascript" src="js/meme-service.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 </body>

@@ -1,7 +1,3 @@
-var gElCanvas;
-var gCtx;
-var gId = 1;
-var gImgs = [];
 
 const gMouseEvs = [
   'click',
@@ -12,75 +8,49 @@ const gMouseEvs = [
   'mousemove',
 ];
 const gTouchEvs = ['touchstart', 'touchmove', 'touchend'];
+var gCtx;
 
-function handleMouse(ev) {
-  console.log('handleMouse');
-  if (ev.target.className.includes('pos-container') || ev.type !== 'click')
-    return;
-  console.log(ev);
-  renderPos(ev, 'mouse');
-}
-
-// Handle touch events
-function handleTouch(ev) {
-  console.log(ev);
-  if (ev.target.className.includes('pos-container') || ev.type !== 'touchstart')
-    return;
-  ev.preventDefault();
-  renderPos(ev, 'touch');
-}
 
 function onInit() {
-  restartGmeme();
-  gElCanvas = document.getElementById('my-canvas');
-  gCtx = gElCanvas.getContext('2d');
-  console.log(gCtx);
-  // resizeCanvas()
-  createImages();
-  renderImgs();
-}
+    restartGmeme();
+    gElCanvas = document.getElementById('my-canvas');
+    gCtx = gElCanvas.getContext('2d');
+    console.log(gCtx);
+    // resizeCanvas()
+    createImages();
+    renderImgs();
+  }
 
-function initHandlers() {
-  gMouseEvs.forEach((evName) => {
-    document.querySelector('.mouse').addEventListener(evName, handleMouse);
-    document.querySelector('.both').addEventListener(evName, handleMouse);
-  });
-  gTouchEvs.forEach((evName) => {
-    document.querySelector('.touch').addEventListener(evName, handleTouch);
-    document.querySelector('.both').addEventListener(evName, handleTouch);
-  });
-}
+//   function initHandlers() {
+//     gMouseEvs.forEach((evName) => {
+//       document.querySelector('.mouse').addEventListener(evName, handleMouse);
+//       document.querySelector('.both').addEventListener(evName, handleMouse);
+//     });
+//     gTouchEvs.forEach((evName) => {
+//       document.querySelector('.touch').addEventListener(evName, handleTouch);
+//       document.querySelector('.both').addEventListener(evName, handleTouch);
+//     });
+//   }
+  
+  
+// function handleMouse(ev) {
+//   console.log('handleMouse');
+//   if (ev.target.className.includes('pos-container') || ev.type !== 'click')
+//     return;
+//   console.log(ev);
+//   renderPos(ev, 'mouse');
+// }
 
-function createImages() {
-  gImgs.push(createImage('img/1.png', 'angry'));
-  gImgs.push(createImage('img/2.png', 'cute'));
-  gImgs.push(createImage('img/3.png', 'cute'));
-  gImgs.push(createImage('img/4.png', 'cute'));
-  gImgs.push(createImage('img/5.png', 'happy'));
-  gImgs.push(createImage('img/6.png', 'smart'));
-  gImgs.push(createImage('img/7.png', 'smart'));
-  gImgs.push(createImage('img/8.png', 'evil'));
-  gImgs.push(createImage('img/9.png', 'evil'));
-  gImgs.push(createImage('img/10.png', 'funny'));
-  gImgs.push(createImage('img/11.png', 'funny'));
-  gImgs.push(createImage('img/12.png', 'smart'));
-  gImgs.push(createImage('img/13.png', 'happy'));
-  gImgs.push(createImage('img/14.png', 'smart'));
-  gImgs.push(createImage('img/15.png', 'smart'));
-  gImgs.push(createImage('img/16.png', 'funny'));
-  gImgs.push(createImage('img/17.png', 'evil'));
-  gImgs.push(createImage('img/18.png', 'funny'));
-}
+// // Handle touch events
+// function handleTouch(ev) {
+//   console.log(ev);
+//   if (ev.target.className.includes('pos-container') || ev.type !== 'touchstart')
+//     return;
+//   ev.preventDefault();
+//   renderPos(ev, 'touch');
+// }
 
-function createImage(url, keyword) {
-  let img = {
-    id: gId++,
-    keyword,
-    url,
-  };
-  console.log(img);
-  return img;
-}
+
 
 function renderImgs() {
   let strHtml = '';
@@ -103,8 +73,6 @@ function onChooseImg(imgId) {
 
 function drawText() {
   let selectedLine = gMeme.selectedLineIdx;
-  // let selectLine = gMeme.selectedLineIdx
-  // onChooseImg(gMeme.selectedImgId)
   renderCanvas();
   let text = gMeme.lines[selectedLine].txt;
   let color = gMeme.lines[selectedLine].color;
@@ -159,12 +127,17 @@ function onChangeLine() {
 
 function onAddLine() {
   if (gMeme.lines.length > 1) return;
+  addLine()
 
-  gMeme.lines.push({ txt: '', size: 40, align: 'left', color: 'red' });
 }
 
 function onShowGallery() {
-  console.log('in???????');
   document.querySelector('.editor-form').classList.add('hide');
   document.querySelector('.gallery-container').style.display = 'grid';
+  restartGmeme()
+  document.getElementById('text-input').value ='';
+}
+
+function renderImg(img) {
+    gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height);
 }
