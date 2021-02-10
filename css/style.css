@@ -57,15 +57,17 @@ a:link {
 
 .hide{
     visibility: hidden;
+    display: none;
 }
 
 
 /* GRID */
 
 .gallery-container {
+   
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(auto-fit, 100px);
+    grid-template-rows: repeat(auto-fit, 1fr);
     grid-gap: 5px;
 }
 

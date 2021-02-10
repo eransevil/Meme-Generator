@@ -31,7 +31,7 @@ function handleTouch(ev) {
 }
 
 function onInit() {
-    restartGmeme();
+  restartGmeme();
   gElCanvas = document.getElementById('my-canvas');
   gCtx = gElCanvas.getContext('2d');
   console.log(gCtx);
@@ -93,12 +93,12 @@ function renderImgs() {
 }
 
 function onChooseImg(imgId) {
-    // debugger;
-    // restartGmeme()
   let img = new Image();
   img.src = `img/${imgId}.jpg`;
   gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height);
   gMeme.selectedImgId = imgId;
+  document.querySelector('.editor-form').classList.remove('hide');
+  document.querySelector('.gallery-container').style.display = 'none';
 }
 
 function drawText() {
@@ -120,7 +120,6 @@ function drawText() {
     gCtx.fillText(text, gElCanvas.width / 2, gElCanvas.height / 1.2);
     gCtx.strokeText(text, gElCanvas.width / 2, gElCanvas.height / 1.2);
   }
-
 }
 
 function renderCanvas() {
@@ -142,21 +141,6 @@ function renderCanvas() {
     }
   }
 }
-//    let text =  gMeme.lines[selectLine].txt
-//    let color = gMeme.lines[selectLine].color
-//     gCtx.lineWidth = 1
-//     gCtx.strokeStyle = 'black'
-//     gCtx.fillStyle = color
-//     gCtx.font = `${gMeme.lines[selectLine].size}px Arial`
-//     gCtx.textAlign = 'center'
-//     if(gMeme.selectedLineIdx===0) {
-//         gCtx.fillText(text, (gElCanvas.width/2), (gElCanvas.height/5))
-//         gCtx.strokeText(text, gElCanvas.width/2, gElCanvas.height/5)
-//     }
-//     else{
-//         gCtx.fillText(text, (gElCanvas.width/2), (gElCanvas.height/1.2))
-//         gCtx.strokeText(text, gElCanvas.width/2, gElCanvas.height/1.2)
-//     }
 
 addEventListener('input', function () {
   let inputText = document.getElementById('text-input').value;
@@ -169,7 +153,6 @@ function onChangeLine() {
   gMeme.selectedLineIdx = gMeme.selectedLineIdx === 0 ? 1 : 0;
   document.getElementById('text-input').value =
     gMeme.lines[gMeme.selectedLineIdx].txt;
-    
 
   drawText();
 }
@@ -180,7 +163,8 @@ function onAddLine() {
   gMeme.lines.push({ txt: '', size: 40, align: 'left', color: 'red' });
 }
 
-// txt: '',
-// size: 40,
-// align: 'left',
-// color: 'red',
+function onShowGallery() {
+  console.log('in???????');
+  document.querySelector('.editor-form').classList.add('hide');
+  document.querySelector('.gallery-container').style.display = 'grid';
+}
