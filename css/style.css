@@ -165,12 +165,23 @@ a:link {
     background-color: #E3E3E3;
 
 }
-.displaybtn{
+.display{
    display: flex;
    flex-direction: column;
 }
 
-.displaybtn input[type=text]{
+.displaybtn{
+    
+}
+
+.editor-btn{
+    border: none;
+    border-radius: 14px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.display input[type=text]{
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;

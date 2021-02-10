@@ -38,8 +38,11 @@
     <div class="canvas-container ">
         <canvas class="canvas" id="my-canvas" height="540" width="550"> </canvas>
 
-        <div class="displaybtn ">
-        <input name="text-input" id="text-input" type="text" placeholder="text" />
+        <div class="display flex">
+            <input name="text-input" id="text-input" type="text" placeholder="text" />
+            
+            <div class="displaybtn flex"> 
+
         <button type="button" class="editor-btn flex" onclick="onChangeFont('+')">
             <img src="img/icon/increase font - icon.png" />
         </button>
@@ -52,6 +55,8 @@
         <button type="button" class="editor-btn flex" onclick="onChangeLine()">
             <img src="img/icon/up-and-down-opposite-double-arrows-side-by-side.png" />
         </button>
+            </div>
+
     </div>
 
     </div>
