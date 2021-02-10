@@ -1,0 +1,44 @@
+
+/*Basics */
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    font-size: 1rem;
+}
+
+img {
+    width: 100%;
+}
+
+
+/* FLEX HELPERS */
+
+.flex {
+    display: flex;
+}
+
+.flex.align-item-center {
+    align-items: center;
+}
+
+.flex.spcae-between {
+    justify-content: space-between;
+}
+
+/*HELPERS */
+
+.clean-ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
