@@ -1,27 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link rel="stylesheet" href="css/style.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meme-Generator</title>
 </head>
-<body>
 
-    
-    <header class="main-header">
-        <div class="header-container main-container flex align-item-center spcae-between">
-              <div class="capitalize logo">memegen</div>
-              <ul class="navbar-conntainer clean-ul flex">
-                    <li><a href="" class="flex align-item-center capitalize nav-item">gallery</a></li>
-                    <li><a href="" class="flex align-item-center capitalize nav-item">about</a></li>
-                    <li><a href="" class="flex align-item-center capitalize nav-item">memes</a></li>
-                    <li><a href="" class="flex align-item-center capitalize nav-item">contact</a></li>
-              </ul>
-        </div>
-  </header>
+<body onload="onInit()" onload="initHandlers()">
+    <header class="header-container flex align-item-center space-between">
+        <div class="capitalize header-logo">memegem</div>
+        <ul class="navbar-conntainer clean-list flex">
+            <li>
+                <a href="#" class="flex align-item-center capitalize nav-item">gallery</a>
+            </li>
+        
+            <li>
+                <a href="#" class="flex align-item-center capitalize nav-item">memes</a>
+            </li>
+            <li>
+                <a href="#" class="flex align-item-center capitalize nav-item">about</a>
+            </li>
+        </ul>
+    </header>
+    <section class="search-container flex">
+        <input type="text" placeholder="Enter search keyword" />
+        <button type="button"><i class="fa fa-search"></i></button>
 
-    
+    </section>
+
+    <form class="editor-form hide">
+        <input name="text-input" id="text-input" type="text" placeholder="text" />
+        <button type="button" class="editor-btn" onclick="onChangeFont('+')">
+            <img src="img/icon/increase font - icon.png" />
+        </button>
+        <button type="button" class="editor-btn" onclick="onChangeFont('-')">
+            <img src="img/icon/decrease font - icon.png" />
+        </button>
+        <button type="button" class="editor-btn" onclick="onAddLine()">
+            <img src="img/icon/add.png" />
+        </button>
+        <button type="button" class="editor-btn" onclick="onChangeLine()">
+            <img src="img/icon/up-and-down-opposite-double-arrows-side-by-side.png" />
+        </button>
+
+    <div class="canvas-container ">
+        <canvas id="my-canvas" height="540" width="550"> </canvas>
+    </div>
+    <!-- onmousemove="draw(event)"
+      onmousedown="onDown()"  -->
+    </form>
+
+    <section class="gallery-container"></section>
+
+    <script type="text/javascript" src="js/meme-service.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
+
 </html>
