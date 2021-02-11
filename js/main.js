@@ -9,7 +9,6 @@ const gMouseEvs = [
 const gTouchEvs = ['touchstart', 'touchmove', 'touchend'];
 var gCtx;
 
- 
 function onInit() {
   restartGmeme();
   gElCanvas = document.getElementById('my-canvas');
@@ -31,7 +30,9 @@ function onDown(ev) {
 }
 
 function isTextClicked(clickedPos) {
-  const { pos } = gMeme.lines[gMeme.selectedLineIdx];
+  const {
+    pos
+  } = gMeme.lines[gMeme.selectedLineIdx];
   const distance = Math.sqrt(
     (pos.x - clickedPos.x) ** 2 + (pos.y - clickedPos.y) ** 2
   );
@@ -73,7 +74,6 @@ function getEvPos(ev) {
   return pos;
 }
 
-
 function renderImgs() {
   var images = getImagesForDisplay();
   let strHtml = '';
@@ -106,6 +106,7 @@ function renderKeyword() {
   }
   elKeyWords.innerHTML = strHTML;
 }
+
 function enlargeValue(word) {
   for (var key in gKeywords) {
     if (key === word) gKeywords[key]++;
@@ -199,12 +200,11 @@ function renderImg(img) {
   gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height);
 }
 
-
 function downloadImg(elLink) {
   renderCanvas();
-  const data = gElCanvas.toDataURL()
-  elLink.href = data
-  elLink.download = 'my-img.jpg'
+  const data = gElCanvas.toDataURL();
+  elLink.href = data;
+  elLink.download = 'my-img.jpg';
 }
 
 function onSetFilter() {
@@ -217,8 +217,8 @@ function onSetFilter() {
   renderImgs();
 }
 
-function onChangeColor(){
-   var color =  document.querySelector('.color-input').value
-   gMeme.lines[gMeme.selectedLineIdx].color = color;
-   drawText();
+function onChangeColor() {
+  var color = document.querySelector('.color-input').value;
+  gMeme.lines[gMeme.selectedLineIdx].color = color;
+  drawText();
 }

@@ -18,19 +18,17 @@ var gMeme = {
   selectedImgId: 1,
   selectedLineIdx: 0,
 
-  lines: [
-    {
-      txt: '',
-      size: 40,
-      align: 'left',
-      color: 'red',
-      isDragging: false,
-      pos: {
-        x: 0,
-        y: 0,
-      },
+  lines: [{
+    txt: '',
+    size: 40,
+    align: 'left',
+    color: 'red',
+    isDragging: false,
+    pos: {
+      x: 0,
+      y: 0,
     },
-  ],
+  }, ],
 };
 
 function restartGmeme() {

@@ -1,4 +1,3 @@
 function toggleMenu() {
-    document.body.classList.toggle('menu-open');
-  }
-  
+  document.body.classList.toggle('menu-open');
+}
