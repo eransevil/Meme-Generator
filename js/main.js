@@ -11,6 +11,7 @@ const gTouchEvs = ['touchstart', 'touchmove', 'touchend'];
 var gCtx;
 
 
+
 function onInit() {
     restartGmeme();
     gElCanvas = document.getElementById('my-canvas');
@@ -73,6 +74,7 @@ function onChooseImg(imgId) {
 }
 
 function drawText() {
+  if(!document.getElementById('text-input').value)return
   let selectedLine = gMeme.selectedLineIdx;
   renderCanvas();
   let text = gMeme.lines[selectedLine].txt;

@@ -116,12 +116,12 @@ a:link {
 
 }
 
+
 .header-logo {
     justify-self: flex-start;
     margin-inline-start: 20px;
 }
 
-.navbar-conntainer {}
 
 .navbar-conntainer a {
     padding: 11px;
@@ -191,6 +191,7 @@ a:link {
     display: flex;
     flex-direction: column;
     background-color: #E3E3E3;
+    flex-wrap: wrap;
 }
 
 
@@ -312,7 +313,7 @@ a:link {
     }
 
     .canvas {
-        max-width: 200px;
+        max-width: 150px;
     }
 
     .editor-form {
@@ -398,6 +399,32 @@ a:link {
         height: 30px;
         
     }
+
+    .about-img {
+        width: 50%;
+        height: 150px;
+        border-radius: 50%;
+        margin-right: 40px;
+    }
+    
+    .about-txt{
+        max-width: 100px;
+    }
+
+    .link-img {
+        height: 15px;
+        width: 15px;
+    
+    }
+    .displaybtn{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+   
+  
+
+    
     
     
 }
