@@ -63,6 +63,11 @@ a:link {
 .main-container {
     max-width: 1600px;
 }
+.bcg-grey{
+    display: flex;
+    background-color: #E3E3E3;
+    justify-content: space-around;
+}
 
 
 /* GRID */
@@ -185,6 +190,7 @@ a:link {
 .display {
     display: flex;
     flex-direction: column;
+    background-color: #E3E3E3;
 }
 
 
@@ -299,23 +305,23 @@ a:link {
 }
 
 
-@media (max-width: 740px) {
+@media (max-width: 640px) {
     .main-container {
-        max-width: 680px;
+        max-width: 580px;
 
     }
 
     .canvas {
-        max-width: 300px;
+        max-width: 200px;
     }
 
     .editor-form {
-        max-width: 700px;
+        max-width: 200px;
     }
 
     .display input[type=text] {
         align-self: center;
-        max-width: 150px;
+        max-width: 100px;
         padding: 6px 10px;
         margin: 8px 0;
         display: inline-block;
@@ -346,7 +352,7 @@ a:link {
     .navbar-conntainer a {
         display: flex;
         top: 20px;
-        width: 150px;
+        width: 120px;
         flex-direction: column;
         color: #0e0c0c;
         border-bottom: 1px solid rgb(204, 199, 199);
@@ -379,17 +385,19 @@ a:link {
     }
 
     .about-container{
-        max-width: 680px;
+        max-width: 580px;
     }
 
     .displaybtn{
-        max-width: 400px;
+        max-width: 300px;
+        
     }
 
     .editor-btn {
         width: 30px;
         height: 30px;
+        
     }
-
-
+    
+    
 }
