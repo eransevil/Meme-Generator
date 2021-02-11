@@ -100,6 +100,27 @@ a:link {
     margin-bottom: 10px;
 
 }
+.key-words{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: Montserrat;
+    margin-inline-start: 5px;
+}
+
+.small{
+    font-size: 1rem;
+    margin: 2px;
+} 
+
+.medium {
+    font-size: 2rem;
+}
+
+.large{
+    font-size: 3rem;
+
+}
 
 .search-container input[type=text] {
     padding: 6px;
@@ -350,16 +371,19 @@ input[type="file"] {
 .share-btn {
     border-radius: 22px;
     margin: 5px;
+   
 
 }
 
 .share-btn a {
     color: black;
     border: 1px solid black;
-    background-color: #E3E3E3;
+    background-color:#FF7F00;
     border-radius: 15px;
-    padding: 4px;
+    padding: 6px;
 }
+
+
 
 
 @media (max-width: 640px) {
@@ -443,6 +467,7 @@ input[type="file"] {
 
     .about-container {
         max-width: 580px;
+        height: 300px;
         flex-direction: column;
         align-items: center;
     }
@@ -460,7 +485,7 @@ input[type="file"] {
 
     .about-img {
         width: 50%;
-        height: 150px;
+        height: 140px;
         border-radius: 50%;
         margin-right: 40px;
     }
@@ -519,6 +544,30 @@ input[type="file"] {
     input[type="file"] {
         font-size: 7px;
         color: #b8b8b8;
+    }
+
+    .key-words{
+        align-items: center;
+        font-family: Montserrat;
+        margin-inline-start: 2px;
+    }
+    
+    .small{
+        font-size: 7px;
+        margin: 2px;
+    } 
+    
+    .medium {
+        font-size: 13px;
+        margin: 2px;
+
+    }
+    
+    .large{
+        font-size: 16px;
+        margin: 2px;
+
+    
     }
 
 }

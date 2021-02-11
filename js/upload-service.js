@@ -1,10 +1,10 @@
 
 // on submit call to this function
 function uploadImg(elForm, ev) {
-    debugger;
     ev.preventDefault();
     document.getElementById('imgData').value = gElCanvas.toDataURL("image/jpeg");
-  
+    renderCanvas()
+
     // A function to be called if request succeeds
     function onSuccess(uploadedImgUrl) {
         uploadedImgUrl = encodeURIComponent(uploadedImgUrl)

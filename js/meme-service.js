@@ -8,27 +8,31 @@ var gCurrPosTxt2;
 const KEY = 'MEME-DB';
 
 const gKeywords = {
-  happy: 6,
-  funny: 1,
-  angry: 2
+  happy: 1,
+  funny: 2,
+  angry: 1,
+  cute: 1,
+  smart: 1,
+  smart: 1,
 };
-// const gImgs = [{ id: 1, url: 'img/1.jpg', keywords: ['angry'] }];
 
 var gMeme = {
   selectedImgId: 1,
   selectedLineIdx: 0,
 
-  lines: [{
-    txt: '',
-    size: 40,
-    align: 'left',
-    color: 'red',
-    isDragging: false,
-    pos: {
-      x: 0,
-      y: 0
+  lines: [
+    {
+      txt: '',
+      size: 40,
+      align: 'left',
+      color: 'red',
+      isDragging: false,
+      pos: {
+        x: 0,
+        y: 0,
+      },
     },
-  }, ],
+  ],
 };
 
 function restartGmeme() {
@@ -85,7 +89,7 @@ function addLine() {
     color: 'red',
     pos: {
       x: gElCanvas.width / 2,
-      y: gElCanvas.height / 1.2
+      y: gElCanvas.height / 1.2,
     },
   });
 }
