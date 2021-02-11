@@ -211,7 +211,7 @@ a:link {
     padding: 10px;
     display: flex;
     justify-content: space-around;
-    max-height: 600;
+    height: 600;
     width: 100%;
     background-color: #E3E3E3;
 
@@ -432,6 +432,9 @@ input[type="file"] {
         box-shadow: none;
         transform: translateX(100%);
         transition: transform 0.8s, box-shadow 0.8s;
+    }
+    .canvas-container{
+        height: 400px;
     }
 
 
