@@ -211,7 +211,7 @@ a:link {
     padding: 10px;
     display: flex;
     justify-content: space-around;
-    max-height: 600;
+    height: 400px;
     width: 100%;
     background-color: #E3E3E3;
 
@@ -316,7 +316,7 @@ a:link {
 }
 
 .footer-container {
-    height: 170px;
+    height: 150px;
     background-color: #FF7F00;
     flex-direction: column;
     justify-content: center;
