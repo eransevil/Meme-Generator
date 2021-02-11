@@ -13,7 +13,6 @@ function onInit() {
   restartGmeme();
   gElCanvas = document.getElementById('my-canvas');
   gCtx = gElCanvas.getContext('2d');
-  console.log(gCtx);
   gMeme.lines[gMeme.selectedLineIdx].pos.x += gElCanvas.width / 2;
   gMeme.lines[gMeme.selectedLineIdx].pos.y += gElCanvas.height / 5;
   createImages();
@@ -22,7 +21,6 @@ function onInit() {
 }
 
 function onDown(ev) {
-  console.log('evenet', ev);
   const pos = getEvPos(ev);
   if (!isTextClicked(pos)) return;
 
@@ -32,9 +30,7 @@ function onDown(ev) {
 }
 
 function isTextClicked(clickedPos) {
-  const {
-    pos
-  } = gMeme.lines[gMeme.selectedLineIdx];
+  const { pos } = gMeme.lines[gMeme.selectedLineIdx];
   const distance = Math.sqrt(
     (pos.x - clickedPos.x) ** 2 + (pos.y - clickedPos.y) ** 2
   );
@@ -76,42 +72,42 @@ function getEvPos(ev) {
   return pos;
 }
 
-//   function initHandlers() {
-//     gMouseEvs.forEach((evName) => {
-//       document.querySelector('.mouse').addEventListener(evName, handleMouse);
-//       document.querySelector('.both').addEventListener(evName, handleMouse);
-//     });
-//     gTouchEvs.forEach((evName) => {
-//       document.querySelector('.touch').addEventListener(evName, handleTouch);
-//       document.querySelector('.both').addEventListener(evName, handleTouch);
-//     });
-//   }
+  function initHandlers() {
+    gMouseEvs.forEach((evName) => {
+      document.querySelector('.mouse').addEventListener(evName, handleMouse);
+      document.querySelector('.both').addEventListener(evName, handleMouse);
+    });
+    gTouchEvs.forEach((evName) => {
+      document.querySelector('.touch').addEventListener(evName, handleTouch);
+      document.querySelector('.both').addEventListener(evName, handleTouch);
+    });
+  }
 
-// function handleMouse(ev) {
-//   console.log('handleMouse');
-//   if (ev.target.className.includes('pos-container') || ev.type !== 'click')
-//     return;
-//   console.log(ev);
-//   renderPos(ev, 'mouse');
-// }
+function handleMouse(ev) {
+  console.log('handleMouse');
+  if (ev.target.className.includes('pos-container') || ev.type !== 'click')
+    return;
+  console.log(ev);
+  renderPos(ev, 'mouse');
+}
 
-// // Handle touch events
-// function handleTouch(ev) {
-//   console.log(ev);
-//   if (ev.target.className.includes('pos-container') || ev.type !== 'touchstart')
-//     return;
-//   ev.preventDefault();
-//   renderPos(ev, 'touch');
-// }
+// Handle touch events
+function handleTouch(ev) {
+  console.log(ev);
+  if (ev.target.className.includes('pos-container') || ev.type !== 'touchstart')
+    return;
+  ev.preventDefault();
+  renderPos(ev, 'touch');
+}
 
 function renderImgs() {
+  var images = getImagesForDisplay();
   let strHtml = '';
-  gImgs.forEach((img) => {
+  images.forEach((img) => {
     strHtml += `<img class="grid-item box" src="img/${img.id}.jpg" onclick="onChooseImg('${img.id}')">`;
   });
   let elGallery = document.querySelector('.gallery-container');
   elGallery.innerHTML = strHtml;
-  console.log(elGallery);
 }
 
 function onChooseImg(imgId) {
@@ -124,18 +120,23 @@ function onChooseImg(imgId) {
   document.querySelector('.search-container').classList.add('hide');
 }
 
-function renderKeyword(){
-  let strHTML ='';
-  let elKeyWords =  document.querySelector('.key-words');
-    for(var key in gKeywords){ 
-      var clasName;
-      if(gKeywords[key]<=1) clasName = 'small';
-      else if(gKeywords[key]<=3) clasName = 'medium';
-      else clasName = 'large'
-    strHTML += `<span class="${clasName}"> ${key} </span>`
-
+function renderKeyword() {
+  let strHTML = '';
+  let elKeyWords = document.querySelector('.key-words');
+  for (var key in gKeywords) {
+    var clasName;
+    if (gKeywords[key] <= 1) clasName = 'small';
+    else if (gKeywords[key] <= 2) clasName = 'medium';
+    else clasName = 'large';
+    strHTML += `<span onclick="enlargeValue('${key}')" class="${clasName}"> ${key} </span>`;
   }
-  elKeyWords.innerHTML = strHTML
+  elKeyWords.innerHTML = strHTML;
+}
+function enlargeValue(word) {
+  for (var key in gKeywords) {
+    if (key === word) gKeywords[key]++;
+  }
+  renderKeyword();
 }
 
 function drawText() {
@@ -160,20 +161,17 @@ function drawText() {
     gMeme.lines[selectedLine].pos.y
   );
 
-  drawLine( gMeme.lines[selectedLine].pos.x, gMeme.lines[selectedLine].pos.y)
+  drawLine(gMeme.lines[selectedLine].pos.x, gMeme.lines[selectedLine].pos.y);
 }
 
 function drawLine(x, y) {
-  gCtx.beginPath()
-  gCtx.lineWidth = 2
-  gCtx.moveTo(x-50, y+10)
-  gCtx.lineTo(x+50, y+10)
-  gCtx.strokeStyle = 'red'
-  gCtx.stroke()
-
+  gCtx.beginPath();
+  gCtx.lineWidth = 2;
+  gCtx.moveTo(x - 50, y + 10);
+  gCtx.lineTo(x + 50, y + 10);
+  gCtx.strokeStyle = 'red';
+  gCtx.stroke();
 }
-
-
 
 function renderCanvas() {
   onChooseImg(gMeme.selectedImgId);
@@ -189,7 +187,6 @@ function renderCanvas() {
 
     gCtx.fillText(text, gMeme.lines[i].pos.x, gMeme.lines[i].pos.y);
     gCtx.strokeText(text, gMeme.lines[i].pos.x, gMeme.lines[i].pos.y);
-
   }
 }
 
@@ -205,13 +202,8 @@ function onChangeLine() {
   document.getElementById('text-input').value =
     gMeme.lines[gMeme.selectedLineIdx].txt;
 
-
   drawText();
-  // drawLine( gMeme.lines[gMeme.selectedLineIdx].pos.x, gMeme.lines[gMeme.selectedLineIdx].pos.y)
-
 }
-
-
 
 function onAddLine() {
   if (gMeme.lines.length > 1) return;
@@ -231,9 +223,18 @@ function renderImg(img) {
 }
 
 function downloadImg(elLink) {
-  renderCanvas()
+  renderCanvas();
   var imgContent = gElCanvas.toDataURL('image/jpeg');
 
   elLink.href = imgContent;
-  console.log(elLink.href);
+}
+
+function onSetFilter() {
+  var filterBy = document.getElementById('search-input').value;
+  for (var key in gKeywords) {
+    if (key === filterBy) gKeywords[key]++;
+  }
+  renderKeyword();
+  setFilter(filterBy);
+  renderImgs();
 }

@@ -64,7 +64,6 @@ function downloadImg(elLink) {
   var imgContent = gElCanvas.toDataURL('image/jpeg')
   
   elLink.href = imgContent
-  console.log(elLink.href)
   
 }
   

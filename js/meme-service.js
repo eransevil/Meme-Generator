@@ -1,19 +1,18 @@
-console.log('connect');
 var gElCanvas;
 var gId = 1;
 var gImgs = [];
 var gCurrPosTxt1;
 var gCurrPosTxt2;
+var gFilterBy = 'all';
 
 const KEY = 'MEME-DB';
 
 const gKeywords = {
   happy: 1,
-  funny: 2,
+  funny: 1,
   angry: 1,
   cute: 1,
-  smart: 1,
-  smart: 1,
+  
 };
 
 var gMeme = {
@@ -51,18 +50,18 @@ function createImages() {
   gImgs.push(createImage('img/3.png', 'cute'));
   gImgs.push(createImage('img/4.png', 'cute'));
   gImgs.push(createImage('img/5.png', 'happy'));
-  gImgs.push(createImage('img/6.png', 'smart'));
-  gImgs.push(createImage('img/7.png', 'smart'));
-  gImgs.push(createImage('img/8.png', 'evil'));
-  gImgs.push(createImage('img/9.png', 'evil'));
+  gImgs.push(createImage('img/6.png', 'cute'));
+  gImgs.push(createImage('img/7.png', 'cute'));
+  gImgs.push(createImage('img/8.png', 'happy'));
+  gImgs.push(createImage('img/9.png', 'happy'));
   gImgs.push(createImage('img/10.png', 'funny'));
   gImgs.push(createImage('img/11.png', 'funny'));
-  gImgs.push(createImage('img/12.png', 'smart'));
+  gImgs.push(createImage('img/12.png', 'angry'));
   gImgs.push(createImage('img/13.png', 'happy'));
-  gImgs.push(createImage('img/14.png', 'smart'));
-  gImgs.push(createImage('img/15.png', 'smart'));
+  gImgs.push(createImage('img/14.png', 'angry'));
+  gImgs.push(createImage('img/15.png', 'cute'));
   gImgs.push(createImage('img/16.png', 'funny'));
-  gImgs.push(createImage('img/17.png', 'evil'));
+  gImgs.push(createImage('img/17.png', 'cute'));
   gImgs.push(createImage('img/18.png', 'funny'));
 }
 
@@ -92,4 +91,26 @@ function addLine() {
       y: gElCanvas.height / 1.2,
     },
   });
+}
+
+
+function setFilter(filterBy) {
+  if(filterBy!=='happy' && filterBy!=='angry'&& filterBy!=='funny' && filterBy!=='cute'){
+     document.getElementById('search-input').value = 'Word does not exist'
+    return;
+  }
+  gFilterBy = filterBy;
+}
+
+function getImagesForDisplay() {
+  if (gFilterBy === 'all') return gImgs;
+  var images = gImgs.filter(function (img) {
+    return (
+      (gFilterBy === 'happy' && img.keyword ==='happy') ||
+      (gFilterBy === 'funny' && img.keyword ==='funny') ||
+      (gFilterBy === 'angry' && img.keyword ==='angry') ||
+      (gFilterBy === 'cute' && img.keyword ==='cute')
+    );
+  });
+  return images;
 }
