@@ -11,7 +11,7 @@
 </head>
 
 <body onload="onInit()" onload="initHandlers()">
-    <header class="header-container flex align-item-center space-between">
+    <header class="header-container flex align-item-center space-between main-container">
         <div class="capitalize header-logo">memegem</div>
         <ul class="navbar-conntainer clean-list flex">
             <li>
@@ -26,22 +26,22 @@
             </li>
         </ul>
     </header>
-    <section class="search-container flex">
+    <section class="search-container flex main-container">
         <input type="text" placeholder="Enter search keyword" />
         <button type="button"><i class="fa fa-search"></i></button>
 
     </section>
 
-    <form class="editor-form hide">
+    <form class="editor-form hide main-container">
        
 
-    <div class="canvas-container ">
+    <div class="canvas-container main-container ">
         <canvas class="canvas" id="my-canvas" height="540" width="550"> </canvas>
 
         <div class="display flex">
             <input name="text-input" id="text-input" type="text" placeholder="text" />
             
-            <div class="displaybtn flex"> 
+            <div class="displaybtn flex "> 
 
         <button type="button" class="editor-btn flex" onclick="onChangeFont('+')">
             <img src="img/icon/increase font - icon.png" />
@@ -64,7 +64,59 @@
       onmousedown="onDown()"  -->
     </form>
 
-    <section class="gallery-container"></section>
+    <section class="gallery-container main-container"></section>
+
+
+    <img src="images/facebook-icon.svg " alt="" />
+  
+    <section class="about-container flex main-container">
+
+        <img class="about-img" src="img/about-pic/Passport Photo - Eran Sevil (2).jpg">
+
+        <div class="about-txt">
+            <h3> Eran Sevil</h3>
+            <p>Web developer from Tel aviv, Israel. </p> 
+            <p> Looking to develop in the field of web programming.</p>
+            <button class="social-link"><img class="link-img" src="img/about-pic/linkedin-icon.svg" /></button>
+            <button class="social-link"><img class="link-img" src="img/about-pic/facebook-icon.svg" /></button>
+            <button class="social-link"><img class="link-img" src="img/about-pic/github-icon.svg" /></button>
+    
+        </div>
+
+    
+    </section>
+    
+    <footer class="footer-container flex main-container">
+        <p class="capitalize footer-logo"> memegem</p>
+        <p class="copyrights"> all rights reserved 2021</p>    
+        </footer>
+<!-- 
+
+    <footer class="main-footer">
+      <div class="footer-container flex space-betweenalign-items-center flex-space-around ">
+        <div class="logo-font logo-footer">Blogin<span class="dot">.</div>
+        <small class="copy-rights">&copy 2014 Blogin.com All Rights Reserved </small>
+        <ul class="social-links clean-list flex">
+          <li>
+            <a class="facebook" href="#">
+              <button><img class="footer-img" src="images/facebook-icon.svg" /></button></a>
+          </li>
+          <li>
+            <a class="twitter" href="#"><button><img class="footer-img" src="images/twitter-icon.svg" /></button></a>
+  
+            </a>
+          </li>
+          <li>
+            <a class="instagram" href="#"><button><img class="footer-img" src="images/instagram-icon.svg" /></button>
+            </a>
+          </li>
+          <li>
+            <a class="linkedin" href="#"><button><img class="footer-img" src="images/linkedin-icon.svg" /></button>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer> -->
 
     <script type="text/javascript" src="js/utils.js"></script>
     <script type="text/javascript" src="js/meme-service.js"></script>

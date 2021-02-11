@@ -69,6 +69,7 @@ function onChooseImg(imgId) {
   gMeme.selectedImgId = imgId;
   document.querySelector('.editor-form').classList.remove('hide');
   document.querySelector('.gallery-container').style.display = 'none';
+   document.querySelector('.search-container').classList.add('hide')
 }
 
 function drawText() {
@@ -134,6 +135,7 @@ function onAddLine() {
 function onShowGallery() {
   document.querySelector('.editor-form').classList.add('hide');
   document.querySelector('.gallery-container').style.display = 'grid';
+  document.querySelector('.search-container').classList.remove('hide')
   restartGmeme()
   document.getElementById('text-input').value ='';
 }
