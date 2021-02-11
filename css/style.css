@@ -387,6 +387,12 @@ input[type="file"] {
     padding: 6px;
 }
 
+.color-container {
+    justify-content: center;
+    display: flex;
+}
+
+
 
 
 

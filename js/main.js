@@ -9,6 +9,7 @@ const gMouseEvs = [
 const gTouchEvs = ['touchstart', 'touchmove', 'touchend'];
 var gCtx;
 
+ 
 function onInit() {
   restartGmeme();
   gElCanvas = document.getElementById('my-canvas');
@@ -72,33 +73,6 @@ function getEvPos(ev) {
   return pos;
 }
 
-function initHandlers() {
-  gMouseEvs.forEach((evName) => {
-    document.querySelector('.mouse').addEventListener(evName, handleMouse);
-    document.querySelector('.both').addEventListener(evName, handleMouse);
-  });
-  gTouchEvs.forEach((evName) => {
-    document.querySelector('.touch').addEventListener(evName, handleTouch);
-    document.querySelector('.both').addEventListener(evName, handleTouch);
-  });
-}
-
-function handleMouse(ev) {
-  console.log('handleMouse');
-  if (ev.target.className.includes('pos-container') || ev.type !== 'click')
-    return;
-  console.log(ev);
-  renderPos(ev, 'mouse');
-}
-
-// Handle touch events
-function handleTouch(ev) {
-  console.log(ev);
-  if (ev.target.className.includes('pos-container') || ev.type !== 'touchstart')
-    return;
-  ev.preventDefault();
-  renderPos(ev, 'touch');
-}
 
 function renderImgs() {
   var images = getImagesForDisplay();
@@ -225,11 +199,12 @@ function renderImg(img) {
   gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height);
 }
 
+
 function downloadImg(elLink) {
   renderCanvas();
-  var imgContent = gElCanvas.toDataURL('image/jpeg');
-
-  elLink.href = imgContent;
+  const data = gElCanvas.toDataURL()
+  elLink.href = data
+  elLink.download = 'my-img.jpg'
 }
 
 function onSetFilter() {
@@ -240,4 +215,10 @@ function onSetFilter() {
   renderKeyword();
   setFilter(filterBy);
   renderImgs();
+}
+
+function onChangeColor(){
+   var color =  document.querySelector('.color-input').value
+   gMeme.lines[gMeme.selectedLineIdx].color = color;
+   drawText();
 }
