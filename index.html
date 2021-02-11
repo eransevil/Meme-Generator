@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meme-Generator</title>
 </head>
+<div class="test"> </div>
 
 <body onload="onInit()" onload="initHandlers()">
 
@@ -19,10 +20,10 @@
         <ul class="navbar-conntainer clean-list flex">
             <li><button onclick="toggleMenu()" class="x-btn"> ✖</button></li>
 
-            <li>    
+            <li>
                 <a onclick="onShowGallery()" href="#" class="flex align-item-center capitalize nav-item">gallery</a>
             </li>
-        
+
             <li>
                 <a href="#" class="flex align-item-center capitalize nav-item">memes</a>
             </li>
@@ -39,68 +40,90 @@
 
     </section>
 
-    <div class="bcg-grey main-container"> 
+    <div class="bcg-grey main-container">
 
-    <form class="editor-form hide main-container">
-       
+        <form action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)"
+            class="editor-form hide main-container">
 
-    <div class="canvas-container main-container  ">
-        <canvas class="canvas" id="my-canvas" height="540" width="550"> </canvas>
 
-        <div class="display flex"  >
-            <input name="text-input" id="text-input" type="text" placeholder="text" />
-            
-            <div class="displaybtn flex "> 
 
-        <button type="button" class="editor-btn flex" onclick="onChangeFont('+')">
-            <img src="img/icon/increase font - icon.png" />
-        </button>
-        <button type="button" class="editor-btn flex" onclick="onChangeFont('-')">
-            <img src="img/icon/decrease font - icon.png" />
-        </button>
-        <button type="button" class="editor-btn flex" onclick="onAddLine()">
-            <img src="img/icon/add.png" />
-        </button>
-        <button type="button" class="editor-btn flex" onclick="onChangeLine()">
-            <img src="img/icon/up-and-down-opposite-double-arrows-side-by-side.png" />
-        </button>
-            </div>
+            <div class="canvas-container main-container  ">
+                <canvas onmousedown="onDown(event)" onmouseup="onUp()" onmousemove="onMove(event)" class="canvas"
+                    id="my-canvas" height="540" width="550"> </canvas>
+
+                <div class="display flex">
+                    <input name="text-input" id="text-input" type="text" placeholder="text" />
+
+                    <div class="displaybtn flex ">
+
+                        <button type="button" class="editor-btn flex" onclick="onChangeFont('+')">
+                            <img src="img/icon/increase font - icon.png" />
+                        </button>
+                        <button type="button" class="editor-btn flex" onclick="onChangeFont('-')">
+                            <img src="img/icon/decrease font - icon.png" />
+                        </button>
+                        <button type="button" class="editor-btn flex" onclick="onAddLine()">
+                            <img src="img/icon/add.png" />
+                        </button>
+                        <button type="button" class="editor-btn flex" onclick="onChangeLine()">
+                            <img src="img/icon/up-and-down-opposite-double-arrows-side-by-side.png" />
+                        </button>
+
+
+                    </div>
+                    <div class="inputs-container">
+                        <div class="btn-file-wrap">
+                            <input type="file" class=" upload-btn" name="image" onchange="onImgInput(event)" />
+                        </div>
+                        <div class="displaybtn">
+                            <input name="img" id="imgData" type="hidden" />
+                            <button class="inputs-btn" type="submit">Publish</button>
+                            <button type="button" class="inputs-btn"> <a href="#" class="btn"
+                                    onclick="downloadImg(this)" download="my-img.jpg">Download</a> </button>
+                            <div class="share-container share-btn"></div>
+
+        </form>
+    </div>
+
+    </div>
 
     </div>
 
     </div>
-</div>
-    <!-- onmousemove="draw(event)"
-      onmousedown="onDown()"  -->
+
+    </div>
+
     </form>
 
     <section class="gallery-container main-container"></section>
 
 
-  
+
     <section class="about-container flex main-container">
 
         <img class="about-img" src="img/about-pic/Passport Photo - Eran Sevil (2).jpg">
 
         <div class="about-txt">
             <h3> Eran Sevil</h3>
-            <p>Web developer from Tel aviv, Israel. </p> 
+            <p>Web developer from Tel aviv, Israel. </p>
             <p> Looking to develop in the field of web programming.</p>
-            <div class="social-container"> 
-            <button class="social-link"><img class="link-img" src="img/about-pic/linkedin-icon.svg" /></button>
-            <button class="social-link"><img class="link-img" src="img/about-pic/facebook-icon.svg" /></button>
-            <button class="social-link"><img class="link-img" src="img/about-pic/github-icon.svg" /></button>
-        </div>
+            <div class="social-container">
+                <button class="social-link"><img class="link-img" src="img/about-pic/linkedin-icon.svg" /></button>
+                <button class="social-link"><img class="link-img" src="img/about-pic/facebook-icon.svg" /></button>
+                <button class="social-link"><img class="link-img" src="img/about-pic/github-icon.svg" /></button>
+            </div>
         </div>
 
-    
+
     </section>
-    
+
     <footer class="footer-container flex main-container">
         <p class="capitalize footer-logo"> memegem</p>
-        <p class="copyrights"> all rights reserved 2021</p>    
-        </footer>   
+        <p class="copyrights"> all rights reserved 2021</p>
+    </footer>
 
+    <script type="text/javascript" src="js/upload-service.js"></script>
+    <script type="text/javascript" src="js/storage-service.js"></script>
     <script type="text/javascript" src="js/utils.js"></script>
     <script type="text/javascript" src="js/meme-service.js"></script>
     <script type="text/javascript" src="js/main.js"></script>

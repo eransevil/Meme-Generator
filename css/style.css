@@ -22,7 +22,7 @@ a {
     color: white;
 }
 
-button{
+button {
     cursor: pointer;
 }
 
@@ -67,7 +67,8 @@ a:link {
 .main-container {
     max-width: 1600px;
 }
-.bcg-grey{
+
+.bcg-grey {
     display: flex;
     background-color: #E3E3E3;
     justify-content: space-around;
@@ -226,12 +227,26 @@ a:link {
     text-align: center;
 }
 
+.inputs-container {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
 .canvas {
     margin: 20px;
     border: 4px solid black;
-    cursor: crosshair;
 
 }
+
+.crosshair {
+    cursor: crosshair;
+}
+
 
 .editor-btn {
     width: 60px;
@@ -272,6 +287,7 @@ a:link {
     border-radius: 12px;
     border: none;
     padding: 5px 7px;
+    margin: 2px;
 }
 
 .footer-container {
@@ -307,6 +323,42 @@ a:link {
     box-shadow: -4px 0px 15px 0px #dcdcdc;
     background-color: #FF7F00;
     color: white;
+}
+
+.inputs-btn {
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.inputs-btn a {
+    color: black;
+}
+
+input[type="file"] {
+    top: 0px;
+    left: 8px;
+    font-size: 17px;
+    color: #b8b8b8;
+}
+
+
+.upload-btn {
+    max-width: 200px;
+    margin: 5px;
+}
+
+.share-btn {
+    border-radius: 22px;
+    margin: 5px;
+
+}
+
+.share-btn a {
+    color: black;
+    border: 1px solid black;
+    background-color: #E3E3E3;
+    border-radius: 15px;
+    padding: 4px;
 }
 
 
@@ -389,21 +441,21 @@ a:link {
 
     }
 
-    .about-container{
+    .about-container {
         max-width: 580px;
         flex-direction: column;
         align-items: center;
     }
 
-    .displaybtn{
+    .displaybtn {
         max-width: 300px;
-        
+
     }
 
     .editor-btn {
         width: 30px;
         height: 30px;
-        
+
     }
 
     .about-img {
@@ -412,15 +464,16 @@ a:link {
         border-radius: 50%;
         margin-right: 40px;
     }
-    
-    
+
+
 
     .link-img {
         height: 15px;
         width: 15px;
-    
+
     }
-    .displaybtn{
+
+    .displaybtn {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
@@ -435,40 +488,37 @@ a:link {
         right: 0;
         background-color: rgb(0 0 0 / 30%);
         cursor: pointer;
-      }
-    
-      body.menu-open .main-screen {
+    }
+
+    body.menu-open .main-screen {
         opacity: 1;
         visibility: visible;
-      }
+    }
 
-      .gallery-container {
+    .gallery-container {
 
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(165px, 1fr);
         grid-gap: 5px;
         background-color: #E3E3E3;
         padding: 20px;
-    
+
     }
 
-    .about-txt p, h3{
-     text-align: center;
-        
+    .about-txt p,
+    h3 {
+        text-align: center;
+
     }
 
-   .social-container{
-       display: flex;
+    .social-container {
+        display: flex;
         justify-content: center;
     }
-    
-    
-    
 
-   
-  
+    input[type="file"] {
+        font-size: 7px;
+        color: #b8b8b8;
+    }
 
-    
-    
-    
 }
