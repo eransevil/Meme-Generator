@@ -211,7 +211,7 @@ a:link {
     padding: 10px;
     display: flex;
     justify-content: space-around;
-    height: 400px;
+    max-height: 600;
     width: 100%;
     background-color: #E3E3E3;
 
@@ -316,7 +316,7 @@ a:link {
 }
 
 .footer-container {
-    height: 150px;
+    height: 170px;
     background-color: #FF7F00;
     flex-direction: column;
     justify-content: center;
@@ -477,7 +477,6 @@ input[type="file"] {
 
     .about-container {
         max-width: 580px;
-        height: 300px;
         flex-direction: column;
         align-items: center;
     }
