@@ -22,6 +22,10 @@ a {
     color: white;
 }
 
+button{
+    cursor: pointer;
+}
+
 
 
 /* FLEX HELPERS */
@@ -387,6 +391,8 @@ a:link {
 
     .about-container{
         max-width: 580px;
+        flex-direction: column;
+        align-items: center;
     }
 
     .displaybtn{
@@ -407,9 +413,7 @@ a:link {
         margin-right: 40px;
     }
     
-    .about-txt{
-        max-width: 100px;
-    }
+    
 
     .link-img {
         height: 15px;
@@ -420,6 +424,46 @@ a:link {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
+
+    .main-screen {
+        visibility: hidden;
+        opacity: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: rgb(0 0 0 / 30%);
+        cursor: pointer;
+      }
+    
+      body.menu-open .main-screen {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .gallery-container {
+
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(165px, 1fr);
+        grid-gap: 5px;
+        background-color: #E3E3E3;
+        padding: 20px;
+    
+    }
+
+    .about-txt p, h3{
+     text-align: center;
+        
+    }
+
+   .social-container{
+       display: flex;
+        justify-content: center;
+    }
+    
+    
+    
 
    
   
