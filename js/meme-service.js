@@ -12,7 +12,6 @@ const gKeywords = {
   funny: 1,
   angry: 1,
   cute: 1,
-  
 };
 
 var gMeme = {
@@ -93,10 +92,16 @@ function addLine() {
   });
 }
 
-
 function setFilter(filterBy) {
-  if(filterBy!=='happy' && filterBy!=='angry'&& filterBy!=='funny' && filterBy!=='cute'){
-     document.getElementById('search-input').value = 'Word does not exist'
+  if (
+    filterBy !== 'happy' &&
+    filterBy !== 'angry' &&
+    filterBy !== 'funny' &&
+    filterBy !== 'cute'
+  ) {
+    document.getElementById('search-input').value = 'Word does not exist';
+    gFilterBy = 'all';
+    renderKeyword();
     return;
   }
   gFilterBy = filterBy;
@@ -106,10 +111,10 @@ function getImagesForDisplay() {
   if (gFilterBy === 'all') return gImgs;
   var images = gImgs.filter(function (img) {
     return (
-      (gFilterBy === 'happy' && img.keyword ==='happy') ||
-      (gFilterBy === 'funny' && img.keyword ==='funny') ||
-      (gFilterBy === 'angry' && img.keyword ==='angry') ||
-      (gFilterBy === 'cute' && img.keyword ==='cute')
+      (gFilterBy === 'happy' && img.keyword === 'happy') ||
+      (gFilterBy === 'funny' && img.keyword === 'funny') ||
+      (gFilterBy === 'angry' && img.keyword === 'angry') ||
+      (gFilterBy === 'cute' && img.keyword === 'cute')
     );
   });
   return images;

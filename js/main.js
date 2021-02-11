@@ -72,16 +72,16 @@ function getEvPos(ev) {
   return pos;
 }
 
-  function initHandlers() {
-    gMouseEvs.forEach((evName) => {
-      document.querySelector('.mouse').addEventListener(evName, handleMouse);
-      document.querySelector('.both').addEventListener(evName, handleMouse);
-    });
-    gTouchEvs.forEach((evName) => {
-      document.querySelector('.touch').addEventListener(evName, handleTouch);
-      document.querySelector('.both').addEventListener(evName, handleTouch);
-    });
-  }
+function initHandlers() {
+  gMouseEvs.forEach((evName) => {
+    document.querySelector('.mouse').addEventListener(evName, handleMouse);
+    document.querySelector('.both').addEventListener(evName, handleMouse);
+  });
+  gTouchEvs.forEach((evName) => {
+    document.querySelector('.touch').addEventListener(evName, handleTouch);
+    document.querySelector('.both').addEventListener(evName, handleTouch);
+  });
+}
 
 function handleMouse(ev) {
   console.log('handleMouse');
@@ -136,6 +136,9 @@ function enlargeValue(word) {
   for (var key in gKeywords) {
     if (key === word) gKeywords[key]++;
   }
+
+  setFilter(word);
+  renderImgs();
   renderKeyword();
 }
 
