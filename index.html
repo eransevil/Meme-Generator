@@ -14,7 +14,9 @@
     <header class="header-container flex align-item-center space-between main-container">
         <div class="capitalize header-logo">memegem</div>
         <ul class="navbar-conntainer clean-list flex">
-            <li>
+            <li><button onclick="toggleMenu()" class="x-btn"> ✖</button></li>
+
+            <li>    
                 <a onclick="onShowGallery()" href="#" class="flex align-item-center capitalize nav-item">gallery</a>
             </li>
         
@@ -25,6 +27,8 @@
                 <a href="#" class="flex align-item-center capitalize nav-item">about</a>
             </li>
         </ul>
+        <button class="menu-btn " onclick="toggleMenu()">☰</button>
+
     </header>
     <section class="search-container flex main-container">
         <input type="text" placeholder="Enter search keyword" />
@@ -89,34 +93,7 @@
     <footer class="footer-container flex main-container">
         <p class="capitalize footer-logo"> memegem</p>
         <p class="copyrights"> all rights reserved 2021</p>    
-        </footer>
-<!-- 
-
-    <footer class="main-footer">
-      <div class="footer-container flex space-betweenalign-items-center flex-space-around ">
-        <div class="logo-font logo-footer">Blogin<span class="dot">.</div>
-        <small class="copy-rights">&copy 2014 Blogin.com All Rights Reserved </small>
-        <ul class="social-links clean-list flex">
-          <li>
-            <a class="facebook" href="#">
-              <button><img class="footer-img" src="images/facebook-icon.svg" /></button></a>
-          </li>
-          <li>
-            <a class="twitter" href="#"><button><img class="footer-img" src="images/twitter-icon.svg" /></button></a>
-  
-            </a>
-          </li>
-          <li>
-            <a class="instagram" href="#"><button><img class="footer-img" src="images/instagram-icon.svg" /></button>
-            </a>
-          </li>
-          <li>
-            <a class="linkedin" href="#"><button><img class="footer-img" src="images/linkedin-icon.svg" /></button>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </footer> -->
+        </footer>   
 
     <script type="text/javascript" src="js/utils.js"></script>
     <script type="text/javascript" src="js/meme-service.js"></script>
