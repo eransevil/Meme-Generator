@@ -133,8 +133,8 @@ function changeAlign(value) {
 
 function isTextClicked(ev, clickedPos) {
   const { pos } = gMeme.lines[gMeme.selectedLineIdx];
-  console.log('text pos', pos);
-  if (ev.type === 'touchstart') {
+  console.log('text pos', pos , ' clickedPos=' ,clickedPos);
+  if (ev.type === 'touchstart' && clickedPos.y <240) {
     return true;
   }
   const distance = Math.sqrt(
