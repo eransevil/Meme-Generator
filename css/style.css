@@ -9,6 +9,7 @@
     src: url(../font/Montserrat-Regular.ttf);
 }
 
+
 body {
     margin: 0;
     font-size: 1rem;
@@ -64,14 +65,14 @@ a:link {
     display: none;
 }
 
-.main-container {
-    max-width: 1600px;
-}
+
 
 .bcg-grey {
     display: flex;
     background-color: #E3E3E3;
     justify-content: space-around;
+    justify-content: center;
+    align-items: center
 }
 
 
@@ -95,33 +96,40 @@ a:link {
 }
 
 .search-container {
-    border-bottom: 2px solid black;
     width: 210px;
     margin-bottom: 10px;
+    justify-content: space-between;
 
+}
+
+.search-tab{
+    display: flex;
+    flex-direction: row;
 }
 
 .key-words {
     display: flex;
     align-items: center;
+    justify-content: center;
     justify-content: flex-start;
     font-family: Montserrat;
-    margin-inline-start: 5px;
+    margin: 15px;
+
 }
 
 .small {
     font-size: 1rem;
-    margin: 6px;
+    margin: 10px;
 }
 
 .medium {
     font-size: 2rem;
-    margin: 6px;
+    margin: 14px;
 }
 
 .large {
     font-size: 3rem;
-    margin: 6px;
+    margin: 16px;
 
 
 }
@@ -129,6 +137,7 @@ a:link {
 .search-container input[type=text] {
     padding: 6px;
     border: none;
+    border-bottom: 2px solid black;
     margin-top: 8px;
     margin-right: 16px;
     font-size: 17px;
@@ -150,6 +159,7 @@ a:link {
 .header-logo {
     justify-self: flex-start;
     margin-inline-start: 20px;
+    font-weight: bold;
 }
 
 
@@ -176,8 +186,6 @@ a:link {
 
 .search-container input[type=text] {
     padding: 10px;
-    font-size: 14px;
-    width: 160px;
 }
 
 .search-container button {
@@ -218,8 +226,11 @@ a:link {
 }
 
 .display {
+    width: 100%;
     display: flex;
     flex-direction: column;
+    margin-left: 50px;
+
     background-color: #E3E3E3;
     flex-wrap: wrap;
 }
@@ -263,8 +274,8 @@ a:link {
 
 
 .canvas {
-    margin: 20px;
     border: 4px solid black;
+    margin-right: 50px;
 
 }
 
@@ -316,7 +327,7 @@ a:link {
 }
 
 .footer-container {
-    height: 170px;
+    height: 210px;
     background-color: #FF7F00;
     flex-direction: column;
     justify-content: center;
@@ -408,6 +419,18 @@ input[type="file"] {
       align-self: center;
   }
 
+ 
+  .displaybtn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.mobile-container{
+    display: flex;
+}
 
 
 @media (max-width: 640px) {
@@ -417,16 +440,20 @@ input[type="file"] {
     }
 
     .canvas {
-        max-width: 150px;
+        width: 100%;
+        margin: 0;
+    }
+    .display{
+        margin: 0;
     }
 
     .editor-form {
-        max-width: 200px;
+       width: 100%;
     }
 
     .display input[type=text] {
         align-self: center;
-        max-width: 100px;
+        /* max-width: 100px; */
         padding: 6px 10px;
         margin: 8px 0;
         display: inline-block;
@@ -446,9 +473,6 @@ input[type="file"] {
         box-shadow: none;
         transform: translateX(100%);
         transition: transform 0.8s, box-shadow 0.8s;
-    }
-    .canvas-container{
-        height: 400px;
     }
 
 
@@ -498,11 +522,6 @@ input[type="file"] {
         align-items: center;
     }
 
-    .displaybtn {
-        max-width: 300px;
-
-    }
-
     .editor-btn {
         width: 30px;
         height: 30px;
@@ -525,8 +544,11 @@ input[type="file"] {
     }
 
     .displaybtn {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
     }
 
     .main-screen {
@@ -553,6 +575,7 @@ input[type="file"] {
         grid-gap: 5px;
         background-color: #E3E3E3;
         padding: 20px;
+        margin-top: 10px
 
     }
 
@@ -606,5 +629,16 @@ input[type="file"] {
 
 
     }
+ 
+  .mobile-container{
+      display: flex;
+      flex-direction: column;
+  }
+
+  .search-container {
+      flex-direction: column;
+  }
+ 
+
 
 }

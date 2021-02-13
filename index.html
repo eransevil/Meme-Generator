@@ -35,8 +35,10 @@
 
     </header>
     <section class="search-container main-container flex ">
+        <div class="search-tab"> 
         <input type="text" id="search-input" placeholder="Enter search word" />
         <button onclick="onSetFilter()" type="button"><i class="fa fa-search"></i></button>
+    </div>
 
         <div class="key-words"> </div>
 
@@ -44,12 +46,13 @@
 
     <div class="bcg-grey main-container">
 
-        <form action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)"
-            class="editor-form hide main-container">
+        <form  action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)"
+            class=" editor-form hide main-container">
 
 
 
             <div class="canvas-container main-container  ">
+                <div class="mobile-container"> 
                 <canvas onmousedown="onDown(event)" onmouseup="onUp()" onmousemove="onMove(event)" class="canvas"
                     id="my-canvas" height="540" width="550"> </canvas>
 
@@ -77,24 +80,24 @@
                             id="colorPicker">
                     </div>
 
-                    <div class="align-text-container"> 
-                    <button type="button" class="editor-btn " onclick="onChangeAlign('right')">
-                        <img src="img/icon/align-to-left.png" />
-                    </button>
-                    <button type="button" class="editor-btn " onclick="onChangeAlign('center')">
-                        <img src="img/icon/center-text-alignment.png" />
-                    </button>
-                    <button type="button" class="editor-btn " onclick="onChangeAlign('left')">
-                        <img src="img/icon/align-to-right.png" />
-                    </button>
-                </div>
-                    
-            <select class="select" onchange="onSetFontFamily(this.value)">
-                <option value="impact">Impact</option>
-                <option value="arial">Arial</option>
-                <option value="fantasy">fantasy</option>
-                <option value="sans-serif">sans-serif</option>
-            </select>
+                    <div class="align-text-container">
+                        <button type="button" class="editor-btn " onclick="onChangeAlign('right')">
+                            <img src="img/icon/align-to-left.png" />
+                        </button>
+                        <button type="button" class="editor-btn " onclick="onChangeAlign('center')">
+                            <img src="img/icon/center-text-alignment.png" />
+                        </button>
+                        <button type="button" class="editor-btn " onclick="onChangeAlign('left')">
+                            <img src="img/icon/align-to-right.png" />
+                        </button>
+                    </div>
+
+                    <select class="select" onchange="onSetFontFamily(this.value)">
+                        <option value="impact">Impact</option>
+                        <option value="arial">Arial</option>
+                        <option value="fantasy">fantasy</option>
+                        <option value="sans-serif">sans-serif</option>
+                    </select>
                     <div class="inputs-container">
                         <div class="btn-file-wrap">
                             <input type="file" class=" upload-btn" name="image" onchange="onImgInput(event)" />
@@ -105,11 +108,11 @@
                             <button type="button" class="inputs-btn"> <a href="#" class="btn"
                                     onclick="downloadImg(this)" download="my-img.jpg">Download</a> </button>
                             <div class="share-container share-btn"></div>
-
+                        </div>
         </form>
     </div>
 
-    </div>
+     </div>
 
     </div>
 
