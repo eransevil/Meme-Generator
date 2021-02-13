@@ -126,8 +126,8 @@ function drawText() {
   gCtx.lineWidth = 1;
   gCtx.strokeStyle = 'black';
   gCtx.fillStyle = color;
-  gCtx.font = `${gMeme.lines[selectedLine].size}px Arial`;
-  gCtx.textAlign = 'center';
+  gCtx.font = `${gMeme.lines[selectedLine].size}px ${gMeme.lines[selectedLine].font}`;
+  gCtx.textAlign = gMeme.lines[selectedLine].align;
   gCtx.fillText(
     text,
     gMeme.lines[selectedLine].pos.x,
@@ -145,8 +145,12 @@ function drawText() {
 function drawLine(x, y) {
   gCtx.beginPath();
   gCtx.lineWidth = 2;
-  gCtx.moveTo(x - 50, y + 10);
-  gCtx.lineTo(x + 50, y + 10);
+  let start = x - 100
+  let end = x + 100
+  if(gMeme.lines[gMeme.selectedLineIdx].align === 'left') end+=50;
+  if(gMeme.lines[gMeme.selectedLineIdx].align === 'right') start-=50;
+  gCtx.moveTo(start, y + 10);
+  gCtx.lineTo(end ,y + 10);
   gCtx.strokeStyle = 'red';
   gCtx.stroke();
 }
@@ -160,8 +164,8 @@ function renderCanvas() {
     gCtx.lineWidth = 1;
     gCtx.strokeStyle = 'black';
     gCtx.fillStyle = color;
-    gCtx.font = `${gMeme.lines[i].size}px Arial`;
-    gCtx.textAlign = 'center';
+    gCtx.font = `${gMeme.lines[i].size}px ${gMeme.lines[i].font}`;
+    gCtx.textAlign = gMeme.lines[i].align;
 
     gCtx.fillText(text, gMeme.lines[i].pos.x, gMeme.lines[i].pos.y);
     gCtx.strokeText(text, gMeme.lines[i].pos.x, gMeme.lines[i].pos.y);
@@ -221,4 +225,17 @@ function onChangeColor() {
   var color = document.querySelector('.color-input').value;
   gMeme.lines[gMeme.selectedLineIdx].color = color;
   drawText();
+}
+
+function onSetFontFamily(value){
+  console.log(value)
+  SetFontFamily(value)
+  drawText();
+
+}
+
+function onChangeAlign(value){
+  changeAlign(value)
+  drawText();
+
 }

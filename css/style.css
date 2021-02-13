@@ -392,7 +392,21 @@ input[type="file"] {
     display: flex;
 }
 
+.select{
+    margin-top: 15px;
+    display: flex;
+    align-self: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    width: 200px;
+    height: 60px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
 
+  .align-text-container{
+      display: flex;
+      align-self: center;
+  }
 
 
 
@@ -421,7 +435,7 @@ input[type="file"] {
         box-sizing: border-box;
 
     }
-
+    
     .navbar-conntainer {
         position: fixed;
         flex-direction: column;
@@ -575,6 +589,16 @@ input[type="file"] {
         margin: 3px;
 
     }
+
+    .select{
+        margin-right: 10px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        width: 150px;
+        height: 40px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+    
 
     .large {
         font-size: 13px;

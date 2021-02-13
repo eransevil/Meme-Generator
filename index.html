@@ -73,12 +73,28 @@
 
                     </div>
                     <div class="color-container">
-                        <input onchange="onChangeColor()" class="color-input" type="color" value="#ff0000 "
+                        <input onchange="onChangeColor()" class="color-input" type="color" value="##ffffff "
                             id="colorPicker">
-
-
-
                     </div>
+
+                    <div class="align-text-container"> 
+                    <button type="button" class="editor-btn " onclick="onChangeAlign('right')">
+                        <img src="img/icon/align-to-left.png" />
+                    </button>
+                    <button type="button" class="editor-btn " onclick="onChangeAlign('center')">
+                        <img src="img/icon/center-text-alignment.png" />
+                    </button>
+                    <button type="button" class="editor-btn " onclick="onChangeAlign('left')">
+                        <img src="img/icon/align-to-right.png" />
+                    </button>
+                </div>
+                    
+            <select class="select" onchange="onSetFontFamily(this.value)">
+                <option value="impact">Impact</option>
+                <option value="arial">Arial</option>
+                <option value="fantasy">fantasy</option>
+                <option value="sans-serif">sans-serif</option>
+            </select>
                     <div class="inputs-container">
                         <div class="btn-file-wrap">
                             <input type="file" class=" upload-btn" name="image" onchange="onImgInput(event)" />
