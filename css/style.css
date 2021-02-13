@@ -364,10 +364,15 @@ a:link {
 .inputs-btn {
     border-radius: 10px;
     margin: 5px;
+    background-color:  #FF7F00;
+    color: white;
+    padding: 10px;
 }
 
 .inputs-btn a {
-    color: black;
+    background-color:  #FF7F00;
+    color: white;
+    
 }
 
 input[type="file"] {
@@ -391,11 +396,11 @@ input[type="file"] {
 }
 
 .share-btn a {
-    color: black;
-    border: 1px solid black;
+    
     background-color: #FF7F00;
-    border-radius: 15px;
-    padding: 6px;
+    border-radius: 10px;
+    padding: 10px;
+    border: 2px solid gray;
 }
 
 .color-container {
