@@ -11,7 +11,7 @@
 </head>
 <div class="test"> </div>
 
-<body onload="onInit()" onload="initHandlers()">
+<body onload="onInit()">
 
     <div class="main-screen" onclick="toggleMenu()"></div>
 
@@ -35,10 +35,10 @@
 
     </header>
     <section class="search-container main-container flex ">
-        <div class="search-tab"> 
-        <input type="text" id="search-input" placeholder="Enter search word" />
-        <button onclick="onSetFilter()" type="button"><i class="fa fa-search"></i></button>
-    </div>
+        <div class="search-tab">
+            <input type="text" id="search-input" placeholder="Enter search word" />
+            <button onclick="onSetFilter()" type="button"><i class="fa fa-search"></i></button>
+        </div>
 
         <div class="key-words"> </div>
 
@@ -46,73 +46,73 @@
 
     <div class="bcg-grey main-container">
 
-        <form  action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)"
+        <form action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)"
             class=" editor-form hide main-container">
 
 
 
             <div class="canvas-container main-container  ">
-                <div class="mobile-container"> 
-                <canvas onmousedown="onDown(event)" onmouseup="onUp()" onmousemove="onMove(event)" class="canvas"
-                    id="my-canvas" height="540" width="550"> </canvas>
+                <div class="mobile-container">
+                    <canvas onmousedown="onDown(event)" onmouseup="onUp()" onmousemove="onMove(event)" class="canvas"
+                        id="my-canvas" height="540" width="550"> </canvas>
 
-                <div class="display flex">
-                    <input name="text-input" id="text-input" type="text" placeholder="text" />
+                    <div class="display flex">
+                        <input name="text-input" id="text-input" type="text" placeholder="text" />
 
-                    <div class="displaybtn flex ">
+                        <div class="displaybtn flex ">
 
-                        <button type="button" class="editor-btn flex" onclick="onChangeFont('+')">
-                            <img src="img/icon/increase font - icon.png" />
-                        </button>
-                        <button type="button" class="editor-btn flex" onclick="onChangeFont('-')">
-                            <img src="img/icon/decrease font - icon.png" />
-                        </button>
-                        <button type="button" class="editor-btn flex" onclick="onAddLine()">
-                            <img src="img/icon/add.png" />
-                        </button>
-                        <button type="button" class="editor-btn flex" onclick="onChangeLine()">
-                            <img src="img/icon/up-and-down-opposite-double-arrows-side-by-side.png" />
-                        </button>
+                            <button type="button" class="editor-btn flex" onclick="onChangeFont('+')">
+                                <img src="img/icon/increase font - icon.png" />
+                            </button>
+                            <button type="button" class="editor-btn flex" onclick="onChangeFont('-')">
+                                <img src="img/icon/decrease font - icon.png" />
+                            </button>
+                            <button type="button" class="editor-btn flex" onclick="onAddLine()">
+                                <img src="img/icon/add.png" />
+                            </button>
+                            <button type="button" class="editor-btn flex" onclick="onChangeLine()">
+                                <img src="img/icon/up-and-down-opposite-double-arrows-side-by-side.png" />
+                            </button>
 
-                    </div>
-                    <div class="color-container">
-                        <input onchange="onChangeColor()" class="color-input" type="color" value="##ffffff "
-                            id="colorPicker">
-                    </div>
-
-                    <div class="align-text-container">
-                        <button type="button" class="editor-btn " onclick="onChangeAlign('right')">
-                            <img src="img/icon/align-to-left.png" />
-                        </button>
-                        <button type="button" class="editor-btn " onclick="onChangeAlign('center')">
-                            <img src="img/icon/center-text-alignment.png" />
-                        </button>
-                        <button type="button" class="editor-btn " onclick="onChangeAlign('left')">
-                            <img src="img/icon/align-to-right.png" />
-                        </button>
-                    </div>
-
-                    <select class="select" onchange="onSetFontFamily(this.value)">
-                        <option value="impact">Impact</option>
-                        <option value="arial">Arial</option>
-                        <option value="fantasy">fantasy</option>
-                        <option value="sans-serif">sans-serif</option>
-                    </select>
-                    <div class="inputs-container">
-                        <div class="btn-file-wrap">
-                            <input type="file" class=" upload-btn" name="image" onchange="onImgInput(event)" />
                         </div>
-                        <div class="displaybtn">
-                            <input name="img" id="imgData" type="hidden" />
-                            <button class="inputs-btn" type="submit">Publish</button>
-                            <button type="button" class="inputs-btn"> <a href="#" class="btn"
-                                    onclick="downloadImg(this)" download="my-img.jpg">Download</a> </button>
-                            <div class="share-container share-btn"></div>
+                        <div class="color-container">
+                            <input onchange="onChangeColor()" class="color-input" type="color" value="##ffffff "
+                                id="colorPicker">
                         </div>
+
+                        <div class="align-text-container">
+                            <button type="button" class="editor-btn " onclick="onChangeAlign('right')">
+                                <img src="img/icon/align-to-left.png" />
+                            </button>
+                            <button type="button" class="editor-btn " onclick="onChangeAlign('center')">
+                                <img src="img/icon/center-text-alignment.png" />
+                            </button>
+                            <button type="button" class="editor-btn " onclick="onChangeAlign('left')">
+                                <img src="img/icon/align-to-right.png" />
+                            </button>
+                        </div>
+
+                        <select class="select" onchange="onSetFontFamily(this.value)">
+                            <option value="impact">Impact</option>
+                            <option value="arial">Arial</option>
+                            <option value="fantasy">fantasy</option>
+                            <option value="sans-serif">sans-serif</option>
+                        </select>
+                        <div class="inputs-container">
+                            <div class="btn-file-wrap">
+                                <input type="file" class=" upload-btn" name="image" onchange="onImgInput(event)" />
+                            </div>
+                            <div class="displaybtn">
+                                <input name="img" id="imgData" type="hidden" />
+                                <button class="inputs-btn" type="submit">Publish</button>
+                                <button type="button" class="inputs-btn"> <a href="#" class="btn"
+                                        onclick="downloadImg(this)" download="my-img.jpg">Download</a> </button>
+                                <div class="share-container share-btn"></div>
+                            </div>
         </form>
     </div>
 
-     </div>
+    </div>
 
     </div>
 

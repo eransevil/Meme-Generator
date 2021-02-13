@@ -18,18 +18,20 @@ var gMeme = {
   selectedImgId: 1,
   selectedLineIdx: 0,
 
-  lines: [{
-    txt: '',
-    size: 40,
-    align: 'center',
-    color: 'white',
-    isDragging: false,
-    font:'Impact',
-    pos: {
-      x: 0,
-      y: 0,
+  lines: [
+    {
+      txt: '',
+      size: 40,
+      align: 'center',
+      color: 'white',
+      isDragging: false,
+      font: 'Impact',
+      pos: {
+        x: 0,
+        y: 0,
+      },
     },
-  }, ],
+  ],
 };
 
 function restartGmeme() {
@@ -40,7 +42,7 @@ function restartGmeme() {
   gMeme.lines[0].size = 40;
   gMeme.lines[0].align = 'center';
   gMeme.lines[0].color = 'white';
-  gMeme.lines[0].font = 'Impact'
+  gMeme.lines[0].font = 'Impact';
 }
 
 function createImages() {
@@ -121,11 +123,23 @@ function getImagesForDisplay() {
   return images;
 }
 
-function SetFontFamily(value){
+function SetFontFamily(value) {
   gMeme.lines[gMeme.selectedLineIdx].font = value;
 }
 
-function   changeAlign(value){
+function changeAlign(value) {
   gMeme.lines[gMeme.selectedLineIdx].align = value;
+}
 
+function isTextClicked(ev, clickedPos) {
+  const { pos } = gMeme.lines[gMeme.selectedLineIdx];
+  console.log('text pos', pos);
+  if (ev.type === 'touchstart') {
+    return true;
+  }
+  const distance = Math.sqrt(
+    (pos.x - clickedPos.x) ** 2 + (pos.y - clickedPos.y) ** 2
+  );
+  console.log('clickedPos', clickedPos, ' text pos after calac', pos);
+  return distance <= gMeme.lines[gMeme.selectedLineIdx].size;
 }

@@ -15,32 +15,52 @@ function onInit() {
   gCtx = gElCanvas.getContext('2d');
   gMeme.lines[gMeme.selectedLineIdx].pos.x += gElCanvas.width / 2;
   gMeme.lines[gMeme.selectedLineIdx].pos.y += gElCanvas.height / 5;
+  addEventListeners();
+
   createImages();
   renderImgs();
   renderKeyword();
+
+}
+
+
+function addEventListeners() {
+  addMouseListeners()
+  addTouchListeners()
+
+}
+
+function addMouseListeners() {
+  gElCanvas.addEventListener('mousemove', onMove);
+
+  gElCanvas.addEventListener('mousedown', onDown);
+
+  document.addEventListener('mouseup', onUp);
+}
+
+function addTouchListeners() {
+  gElCanvas.addEventListener('touchmove', onMove)
+
+  gElCanvas.addEventListener('touchstart', onDown)
+
+  gElCanvas.addEventListener('touchend', onUp)
 }
 
 function onDown(ev) {
+  console.log('touch1')
   const pos = getEvPos(ev);
-  if (!isTextClicked(pos)) return;
+  if (!isTextClicked(ev, pos)) return;
 
   gStartPos = pos;
   document.body.style.cursor = 'grabbing';
   gMeme.lines[gMeme.selectedLineIdx].isDragging = true;
 }
 
-function isTextClicked(clickedPos) {
-  const {
-    pos
-  } = gMeme.lines[gMeme.selectedLineIdx];
-  const distance = Math.sqrt(
-    (pos.x - clickedPos.x) ** 2 + (pos.y - clickedPos.y) ** 2
-  );
-  return distance <= gMeme.lines[gMeme.selectedLineIdx].size;
-}
+
 
 function onMove(ev) {
   if (gMeme.lines[gMeme.selectedLineIdx].isDragging) {
+    console.log('touch?')
     const pos = getEvPos(ev);
     const dx = pos.x - gStartPos.x;
     const dy = pos.y - gStartPos.y;
@@ -59,7 +79,9 @@ function onUp() {
 }
 
 function getEvPos(ev) {
+  // debugger;
   var pos = {
+
     x: ev.offsetX,
     y: ev.offsetY,
   };
@@ -67,8 +89,8 @@ function getEvPos(ev) {
     ev.preventDefault();
     ev = ev.changedTouches[0];
     pos = {
-      x: ev.pageX - ev.target.offsetLeft - ev.target.clientLeft,
-      y: ev.pageY - ev.target.offsetTop - ev.target.clientTop,
+      x: ev.pageX - (ev.target.offsetLeft + ev.target.clientLeft),
+      y: ev.pageY - (ev.target.offsetTop + ev.target.clientTop),
     };
   }
   return pos;
@@ -148,10 +170,10 @@ function drawLine(x, y) {
   gCtx.lineWidth = 2;
   let start = x - 100
   let end = x + 100
-  if(gMeme.lines[gMeme.selectedLineIdx].align === 'left') end+=50;
-  if(gMeme.lines[gMeme.selectedLineIdx].align === 'right') start-=50;
+  if (gMeme.lines[gMeme.selectedLineIdx].align === 'left') end += 50;
+  if (gMeme.lines[gMeme.selectedLineIdx].align === 'right') start -= 50;
   gCtx.moveTo(start, y + 10);
-  gCtx.lineTo(end ,y + 10);
+  gCtx.lineTo(end, y + 10);
   gCtx.strokeStyle = 'red';
   gCtx.stroke();
 }
@@ -229,14 +251,14 @@ function onChangeColor() {
   drawText();
 }
 
-function onSetFontFamily(value){
+function onSetFontFamily(value) {
   console.log(value)
   SetFontFamily(value)
   drawText();
 
 }
 
-function onChangeAlign(value){
+function onChangeAlign(value) {
   changeAlign(value)
   drawText();
 

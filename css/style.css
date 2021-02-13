@@ -102,7 +102,7 @@ a:link {
 
 }
 
-.search-tab{
+.search-tab {
     display: flex;
     flex-direction: row;
 }
@@ -364,15 +364,15 @@ a:link {
 .inputs-btn {
     border-radius: 10px;
     margin: 5px;
-    background-color:  #FF7F00;
+    background-color: #FF7F00;
     color: white;
     padding: 10px;
 }
 
 .inputs-btn a {
-    background-color:  #FF7F00;
+    background-color: #FF7F00;
     color: white;
-    
+
 }
 
 input[type="file"] {
@@ -396,7 +396,7 @@ input[type="file"] {
 }
 
 .share-btn a {
-    
+
     background-color: #FF7F00;
     border-radius: 10px;
     padding: 10px;
@@ -408,7 +408,7 @@ input[type="file"] {
     display: flex;
 }
 
-.select{
+.select {
     margin-top: 15px;
     display: flex;
     align-self: center;
@@ -417,15 +417,15 @@ input[type="file"] {
     height: 60px;
     border-radius: 10px;
     cursor: pointer;
-  }
+}
 
-  .align-text-container{
-      display: flex;
-      align-self: center;
-  }
+.align-text-container {
+    display: flex;
+    align-self: center;
+}
 
- 
-  .displaybtn {
+
+.displaybtn {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -433,7 +433,7 @@ input[type="file"] {
 
 }
 
-.mobile-container{
+.mobile-container {
     display: flex;
 }
 
@@ -448,12 +448,13 @@ input[type="file"] {
         width: 100%;
         margin: 0;
     }
-    .display{
+
+    .display {
         margin: 0;
     }
 
     .editor-form {
-       width: 100%;
+        width: 100%;
     }
 
     .display input[type=text] {
@@ -467,7 +468,7 @@ input[type="file"] {
         box-sizing: border-box;
 
     }
-    
+
     .navbar-conntainer {
         position: fixed;
         flex-direction: column;
@@ -581,7 +582,6 @@ input[type="file"] {
         background-color: #E3E3E3;
         padding: 20px;
         margin-top: 10px
-
     }
 
     .about-txt p,
@@ -618,15 +618,15 @@ input[type="file"] {
 
     }
 
-    .select{
+    .select {
         margin-right: 10px;
         font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         width: 150px;
         height: 40px;
         border-radius: 10px;
         cursor: pointer;
-      }
-    
+    }
+
 
     .large {
         font-size: 13px;
@@ -634,16 +634,16 @@ input[type="file"] {
 
 
     }
- 
-  .mobile-container{
-      display: flex;
-      flex-direction: column;
-  }
 
-  .search-container {
-      flex-direction: column;
-  }
- 
+    .mobile-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .search-container {
+        flex-direction: column;
+    }
+
 
 
 }
