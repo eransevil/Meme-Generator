@@ -4,7 +4,7 @@ var gImgs = [];
 var gCurrPosTxt1;
 var gCurrPosTxt2;
 var gFilterBy = 'all';
-
+var saveMemes;
 const KEY = 'MEME-DB';
 
 const gKeywords = {
@@ -134,12 +134,23 @@ function changeAlign(value) {
 function isTextClicked(ev, clickedPos) {
   const { pos } = gMeme.lines[gMeme.selectedLineIdx];
   console.log('text pos', pos , ' clickedPos=' ,clickedPos);
-  if (ev.type === 'touchstart' && clickedPos.y <240) {
-    return true;
-  }
+  if (ev.type === 'touchstart' && clickedPos.y <240){
+   return true;
+
+    
+  } 
   const distance = Math.sqrt(
     (pos.x - clickedPos.x) ** 2 + (pos.y - clickedPos.y) ** 2
   );
-  console.log('clickedPos', clickedPos, ' text pos after calac', pos);
   return distance <= gMeme.lines[gMeme.selectedLineIdx].size;
+}
+
+
+function _saveMemeToStorage(urlImg) {
+  saveToStorage(KEY, urlImg);
+
+}
+function _loadMemeToStorage(){
+  console.log('hey')
+ return loadFromStorage(KEY)
 }

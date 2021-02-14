@@ -9,14 +9,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meme-Generator</title>
 </head>
-<div class="test"> </div>
 
 <body onload="onInit()">
 
     <div class="main-screen" onclick="toggleMenu()"></div>
 
     <header class="header-container flex align-item-center space-between main-container">
-        <div class="capitalize header-logo">memegem</div>
+        <div class="capitalize header-logo"> <a onclick="onShowGallery()" href="#"> <img class="logo" src="img/icon/logo.png"> </a></div>
         <ul class="navbar-conntainer clean-list flex">
             <li><button onclick="toggleMenu()" class="x-btn"> ✖</button></li>
 
@@ -25,7 +24,7 @@
             </li>
 
             <li>
-                <a href="#" class="flex align-item-center capitalize nav-item">memes</a>
+                <a onclick="onShowSaveMemes()" href="#" class="flex align-item-center capitalize nav-item">memes</a>
             </li>
             <li>
                 <a href="#about" class="flex align-item-center capitalize nav-item">about</a>
@@ -46,8 +45,10 @@
 
     <div class="bcg-grey main-container">
 
+        <div class="save-mems"> </div>
+
         <form action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)"
-            class=" editor-form hide main-container">
+            class=" editor-form hide main-container ">
 
 
 
@@ -72,6 +73,9 @@
                             </button>
                             <button type="button" class="editor-btn flex" onclick="onChangeLine()">
                                 <img src="img/icon/up-and-down-opposite-double-arrows-side-by-side.png" />
+                            </button>
+                            <button type="button" class="editor-btn flex" onclick="onSaveMeme()">
+                                <img src="img/icon/download.png" />
                             </button>
 
                         </div>
@@ -145,10 +149,11 @@
     </section>
 
     <footer class="footer-container flex main-container">
-        <p class="capitalize footer-logo"> memegem</p>
+        <p class="capitalize footer-logo"><a href="#">  <img class="logo" src="img/icon/logo.png"> </a></p>
         <p class="copyrights"> all rights reserved 2021</p>
     </footer>
 
+    <script type="text/javascript" src="js/storage-service.js"></script>
     <script type="text/javascript" src="js/upload-service.js"></script>
     <script type="text/javascript" src="js/utils.js"></script>
     <script type="text/javascript" src="js/meme-service.js"></script>

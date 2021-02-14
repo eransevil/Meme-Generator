@@ -48,6 +48,7 @@ function loadImageFromInput(ev, onImageReady) {
   reader.onload = function (event) {
     var img = new Image()
     img.onload = onImageReady.bind(null, img)
+      img.crossOrigin = 'anonymous';
     img.src = event.target.result
     gImg = img
   }
