@@ -445,6 +445,7 @@ input[type="file"] {
 }
 
 .save-mems{
+    display:none;
     padding: 10px;
     margin-top: 4px;
     box-shadow: 0px -2px 21px -1px rgba(0,0,0,0.46) ;
