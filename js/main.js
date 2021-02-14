@@ -266,6 +266,7 @@ function onChangeAlign(value) {
 }
 
 function onSaveMeme(){
+  renderCanvas();
   let urlImg =document.getElementById('imgData').value = gElCanvas.toDataURL("image/jpeg");
   _saveMemeToStorage(urlImg);
 
